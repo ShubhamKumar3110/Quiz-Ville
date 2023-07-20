@@ -12,31 +12,43 @@
         "desc":"Very confidential data."
     },
     {
-        "title":"Genral Knowledge",
+        "title":"Genral Knowledge 1",
         "path":"QuestionSets/GeneralKnowledge.json",
         "questions":"3",
         "desc":"Basic facts."
     },
     {
-        "title":"Genral Knowledge",
+        "title":"Genral Knowledge 2",
         "path":"QuestionSets/GeneralKnowledge.json",
         "questions":"3",
         "desc":"Basic facts."
     },
     {
-        "title":"Genral Knowledge",
+        "title":"Genral Knowledge 3",
         "path":"QuestionSets/GeneralKnowledge.json",
         "questions":"3",
         "desc":"Basic facts."
     },
     {
-        "title":"Genral Knowledge",
+        "title":"Genral Knowledge 4",
         "path":"QuestionSets/GeneralKnowledge.json",
         "questions":"3",
         "desc":"Basic facts."
     },
     {
-        "title":"Genral Knowledge",
+        "title":"Genral Knowledge 5",
+        "path":"QuestionSets/GeneralKnowledge.json",
+        "questions":"3",
+        "desc":"Basic facts."
+    },
+    {
+        "title":"Genral Knowledge 6",
+        "path":"QuestionSets/GeneralKnowledge.json",
+        "questions":"3",
+        "desc":"Basic facts."
+    },
+    {
+        "title":"Genral Knowledge 7",
         "path":"QuestionSets/GeneralKnowledge.json",
         "questions":"3",
         "desc":"Basic facts."
