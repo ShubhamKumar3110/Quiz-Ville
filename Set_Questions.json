@@ -1,0 +1,44 @@
+[
+    {
+        "title":"Maths",
+        "path":"QuestionSets/Maths.json",
+        "questions":"5",
+        "desc":"Extreamly curated high difficulty questions."
+    },
+    {
+        "title":"Credentials",
+        "path":"QuestionSets/Credentials.json",
+        "questions":"2",
+        "desc":"Very confidential data."
+    },
+    {
+        "title":"Genral Knowledge",
+        "path":"QuestionSets/GeneralKnowledge.json",
+        "questions":"3",
+        "desc":"Basic facts."
+    },
+    {
+        "title":"Genral Knowledge",
+        "path":"QuestionSets/GeneralKnowledge.json",
+        "questions":"3",
+        "desc":"Basic facts."
+    },
+    {
+        "title":"Genral Knowledge",
+        "path":"QuestionSets/GeneralKnowledge.json",
+        "questions":"3",
+        "desc":"Basic facts."
+    },
+    {
+        "title":"Genral Knowledge",
+        "path":"QuestionSets/GeneralKnowledge.json",
+        "questions":"3",
+        "desc":"Basic facts."
+    },
+    {
+        "title":"Genral Knowledge",
+        "path":"QuestionSets/GeneralKnowledge.json",
+        "questions":"3",
+        "desc":"Basic facts."
+    }
+]

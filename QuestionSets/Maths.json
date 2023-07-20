@@ -1,0 +1,32 @@
+[
+  {
+    "type":"mcq_random",
+    "question":"Whats 5+7?",
+    "answer":"12",
+    "ansSet":"nums_1"
+  },  
+  {
+    "type":"mcq_random",
+    "question":"180*0.01+2.2",
+    "answer":"4",
+    "ansSet":"nums_1"
+  },  
+  {
+    "type":"mcq_random",
+    "question":"35/5",
+    "answer":"7",
+    "ansSet":"nums_1"
+  },  
+  {
+    "type":"mcq_random",
+    "question":"84/7+4",
+    "answer":"15",
+    "ansSet":"nums_1"
+  },  
+  {
+    "type":"mcq_random",
+    "question":"9/2*4",
+    "answer":"18",
+    "ansSet":"nums_1"
+  }  
+]
