@@ -3,7 +3,7 @@
     --viewh: 0;
     --transtime: 240ms;
     --transhalf: 160ms;
-    --transeffect: ease;
+    --transeffect: ease-in-out;
     --themefont: 'Quicksand', sans-serif;
 }
 *
@@ -150,13 +150,11 @@ input, textarea, button, select, a, article
 }
 #hamburger-navbar[data-theme="true"] .hamburger-lines .bar1 
 {
-    rotate: -20deg;
-    translate: 0px 4px;
+    rotate: 0deg;
 }
 #hamburger-navbar[data-theme="true"] .hamburger-lines .bar3 
 {
-    rotate: 20deg;
-    translate: 0px -4px;
+    rotate: 0deg;
 }
 
 
@@ -234,6 +232,10 @@ input, textarea, button, select, a, article
 
     z-index: 9;
 }
+#links-item ul
+{
+    padding-top: 37px;
+}
 #links-item a
 {
     position: relative;
@@ -242,54 +244,28 @@ input, textarea, button, select, a, article
     padding: calc(3vh - 2px) 0px;
 
     display: block;
-    text-align: center;
+    text-align: left;
 
     text-decoration: none;
 
-    background-image: linear-gradient(#ffffff36, transparent, #35353554);
-
-    border-style: solid;
-    border-color: hsla(0, 0%, 100%, 0.363);
-    border-width: 0px 0px 1px 0px;
-
-    font-size: 22px;
+    font-size: 23px;
     font-family: var(--themefont);
     color: white;
-
 }
 #links-item a:active
 {
-    background-image: linear-gradient(#35353554, #14141474);
+    background-color: #00000029;
 }
 #links-item svg
 {
     position: absolute;
-    left: 24%;
-    top: 27%;
+    left: 13%;
+    top: 30%;
 }
 #links-item span
 {
     position: relative;
-}
-#links-item #home-link
-{
-    right: 6%;
-}
-#links-item #theme-link
-{
-    right: 3%;
-}
-#links-item #question-link
-{
-    right: -4%;
-}
-#links-item #answer-link
-{
-    right: -2%;
-}
-#links-item #logout-link
-{
-    right: 5%;
+    left: calc(13% + 60px);
 }
 
 
@@ -352,92 +328,67 @@ input, textarea, button, select, a, article
 
     z-index: 10;
 }
-.theme0
+.theme-all
 {
-    padding: 20px 110px;
-    margin: 20px;
+    display: inline-block;
+    height: 8vh;
+    width: 39vw;
 
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     font-family: var(--themefont);
     color: white;
-    text-align: center;
 
     border-style: solid;
-    border-color: transparent;
-    border-width: 2px 0px 2px 0px;
+    border-color: #ffffffde;
+    border-width: 2px;
     border-radius: 18px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 
     cursor: pointer;
 }
 #theme1
 {
     background-image: url(Button/Background0.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 #theme2
 {
     background-image: url(Button/Background1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 #theme3
 {
     background-image: url(Button/Background2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 #theme4
 {
     background-image: url(Button/Background3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 #theme5
 {
     background-image: url(Button/Background4.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 #theme6
 {
     background-image: url(Button/Background5.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 #theme7
 {
     background-image: url(Button/Background6.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 #theme8
 {
     background-image: url(Button/Background7.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 #theme9
 {
     background-image: url(Button/Background8.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
-#theme10{
+#theme10
+{
     background-image: url(Button/Background9.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 
 
@@ -478,7 +429,7 @@ input, textarea, button, select, a, article
 {
     position: relative;
     padding: 20px;
-    margin: 0px 10px 10px 20px;
+    margin: 0px 10px 13px 20px;
     
     border-style: solid;
     border-color: transparent;
@@ -561,14 +512,9 @@ input, textarea, button, select, a, article
     {
         grid-template-columns: 1fr;
     }
-    .theme0
+    .theme-all:active 
     {
-        padding: 18px 23px;
-        margin: 20px;
-    }
-    .theme0:active 
-    {
-        font-size: 16px;
+        font-size: 18px;
     }
     .heading-item
     {
