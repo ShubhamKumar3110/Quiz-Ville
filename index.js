@@ -8,7 +8,7 @@ fetch("Set_Questions.json").then((data)=>{
         //showing details of each question set
         data1+=`
         <article class="set">
-            <a href=Questions.html?p=${values.title}></a>
+            <a href=Questions.html?p=${values.title}&que=${values.questions}></a>
             <button></button>
             <h3>${values.title}</h3>
             <p>${values.desc}</p>
@@ -17,7 +17,7 @@ fetch("Set_Questions.json").then((data)=>{
         </article>`
     })
     //running the above lines as html in sets section
-    document.getElementById("sets").innerHTML=data1;
+    document.getElementById("sets").innerHTML = data1;
 
 
 }).catch((err)=>{
