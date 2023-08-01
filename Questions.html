@@ -5,31 +5,104 @@
     <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <link rel="stylesheet" href="Questions.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,300&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <!-- font-family: 'Exo', sans-serif; -->
+    <!-- font-family: 'Quicksand', sans-serif; -->
+
     <title>Document</title>
+    
 </head>
 <body>
-    <nav>
-        <div class="container nav_container">
-            <h4>Q & A</h4>
-            <!-- <ul class="nav_menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="courses.html">Cources</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
-            <button id="close-menu-btn"><i class="uil uil-multiply"></i></button> -->
-        </div>
-    </nav>
 
-    <section class="infotab">
-        <span>Score: </span>
-        <span id="current">0</span>
+    <div id="bg-image"></div>
+
+    <section id="info-space">
+
+        <a>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256"><path fill="white" d="M224 115.55V208a16 16 0 0 1-16 16h-40a16 16 0 0 1-16-16v-40a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v40a16 16 0 0 1-16 16H48a16 16 0 0 1-16-16v-92.45a16 16 0 0 1 5.17-11.78l80-75.48l.11-.11a16 16 0 0 1 21.53 0a1.14 1.14 0 0 0 .11.11l80 75.48a16 16 0 0 1 5.08 11.78Z"/></svg>
+            <span>Home</span>
+
+        </a>
+
+        <div id="topic">
+
+            <h1></h1>
+
+        </div>
+
+        <div id="score">
+
+            <span>Score&nbsp;&nbsp;:</span>
+            <span id="current">0</span>
+
+        </div>
+
+        <div id="que-no">
+
+            <span id="curr-que">1</span>
+            <span>of</span>
+            <span id="total-que"></span>
+
+        </div>
+
+        <div id="time">
+
+            <span id="min">00</span>
+
+            <span> : </span>
+
+            <span id="sec">00</span>
+            
+        </div>
+
+
     </section>
-    <section id="question_space">
+
+    <section id="question-space">
+
+        <h2></h2>
+        
+        <div id="options">
+
+            <button name="choice-butt" class="choice">&nbsp;</button>
+            <button name="choice-butt" class="choice">&nbsp;</button>
+            <button name="choice-butt" class="choice">&nbsp;</button>
+            <button name="choice-butt" class="choice">&nbsp;</button>
+
+        </div>
+
+        <div id="skip">
+            
+            <button name="skip-butt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><g fill="white"><path d="M16.66 14.647c1.787-1.154 1.787-4.14 0-5.294L5.87 2.385C4.135 1.264 2 2.724 2 5.033v13.934c0 2.31 2.134 3.769 3.87 2.648l10.79-6.968Z"/></g></svg>
+                <span>Skip</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section id="menu-again">
+
+        <button name="menu-butt" id="menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.75 2h2c2.828 0 4.243 0 5.121.879c.879.878.879 2.293.879 5.121v8c0 2.828 0 4.243-.879 5.121c-.878.879-2.293.879-5.121.879h-2c-2.828 0-4.243 0-5.121-.879c-.879-.878-.879-2.293-.879-5.121V8c0-2.828 0-4.243.879-5.121C6.507 2 7.922 2 10.75 2ZM8 13a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5h-6A.75.75 0 0 1 8 13Zm0-4a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5h-6A.75.75 0 0 1 8 9Zm0 8a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5h-3A.75.75 0 0 1 8 17ZM1.75 4.25A.75.75 0 0 1 2.5 5v14A.75.75 0 0 1 1 19V5a.75.75 0 0 1 .75-.75Zm20 0a.75.75 0 0 1 .75.75v14a.75.75 0 0 1-1.5 0V5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd"/></svg>
+            <span>Menu</span>
+        </button>
+
+        <button name="again-butt" id="again">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="currentColor"><path fill-rule="evenodd" d="M8.716 3.203a.702.702 0 0 1 .987 0l1.86 1.846c.2.198.26.496.151.754a.698.698 0 0 1-.644.428H9.21C5.997 6.23 3.394 8.814 3.394 12S6 17.77 9.21 17.77h.464c.386 0 .698.31.698.692a.695.695 0 0 1-.698.692H9.21C5.228 19.154 2 15.95 2 12s3.228-7.154 7.21-7.154h.175l-.669-.664a.689.689 0 0 1 0-.98Zm4.912 2.335c0-.382.312-.692.698-.692h.465C18.772 4.846 22 8.05 22 12s-3.228 7.154-7.21 7.154h-.175l.669.664a.688.688 0 0 1 0 .98a.701.701 0 0 1-.987 0l-1.86-1.847a.688.688 0 0 1-.151-.754a.698.698 0 0 1 .644-.428h1.86c3.212 0 5.815-2.583 5.815-5.769s-2.603-5.77-5.814-5.77h-.465a.695.695 0 0 1-.698-.692Z" clip-rule="evenodd"/><path d="M5.488 12c0-2.04 1.666-3.692 3.721-3.692h5.582c2.055 0 3.72 1.653 3.72 3.692c0 2.04-1.665 3.692-3.72 3.692H9.209c-2.055 0-3.72-1.653-3.72-3.692Z"/></g></svg>
+            <span>Again</span>
+        </button>
         
     </section>
 
+    <section id="result-space"></section>
+
     <script src="Questions.js"></script>
+    
 </body>
 </html>
