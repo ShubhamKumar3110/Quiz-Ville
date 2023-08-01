@@ -24,25 +24,24 @@ function index3Filter(max, filter, arre)
 }
 //-----------------------------------------------------------------------------------------------------//
 
+//-----------------------------------------------------------------------------------------------------\\
 let param = new URLSearchParams(window.location.search);
+let path = param.get("path");
+let title = param.get("title");
+let que = param.get("que");
 
-let q = param.get('p');
+document.querySelector("#topic h1").innerHTML = title;                  //Adding the topic name
+document.getElementById("total-que").innerText = que;                   //Setting the total number of questions
 
 let currentScore = 0;
-
-//-----------------------------------------------------------------------------------------------------\\
-document.querySelector("#topic h1").innerHTML = q;                  //Adding the topic name
-
 let currentQuestion = 1;
-let que = param.get('que');     
-document.getElementById("total-que").innerText = que;                  //Setting the total number of questions
 
-let correctOption;                                                  //Keeps track of the button with the correct answer
-const choices = document.querySelectorAll(".choice");
-const questionHead = document.querySelector("#question-space h2");
-
+let correctOption;                  //Keeps track of the button with the correct answer
 let chosenAns = new Array();        //Keeps the record of all the options selected or skipped
 let QuestionArray;                  //Keeps the record of all the questions
+
+const choices = document.querySelectorAll(".choice");
+const questionHead = document.querySelector("#question-space h2");
 //-----------------------------------------------------------------------------------------------------//
 
 
@@ -181,7 +180,7 @@ function loadQuestion(values)
 }
 
 //loading array from URL parameter
-loadJson(`QuestionSets/${q}.json`)
+loadJson(path)
 .then(array => {
 
     //shuffle array
