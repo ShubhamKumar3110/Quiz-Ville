@@ -1,14 +1,23 @@
 // load list of questionSets
-fetch("Set_Questions.json").then((data)=>{
+fetch("Set_Questions.json").then((data) => {
+
     return data.json();
-}).then((completedata)=>{
-    let data1="";
-    //running all elements through below code using map
-    completedata.map((values)=>{
-        //showing details of each question set
-        data1+=`
+
+}).then((completedata) => {
+    
+    let dataSets="";
+
+    completedata.map((values) => {
+        
+        var baseUrl = "Questions.html";
+        var title = values.title;
+        var que = values.questions;
+        var path = values.path;
+        var url = baseUrl + "?title=" + encodeURIComponent(title) + "&que=" + encodeURIComponent(que) + "&path=" + encodeURIComponent(path);
+        
+        dataSets+=`
         <article class="set">
-            <a href=Questions.html?p=${values.title}&que=${values.questions}></a>
+            <a href=${url}></a>
             <button></button>
             <h3>${values.title}</h3>
             <p>${values.desc}</p>
@@ -16,10 +25,10 @@ fetch("Set_Questions.json").then((data)=>{
             <h4>questions</h4>
         </article>`
     })
-    //running the above lines as html in sets section
-    document.getElementById("sets").innerHTML = data1;
+
+    document.getElementById("sets").innerHTML = dataSets;
 
 
-}).catch((err)=>{
+}).catch((err) => {
     console.log(err);
 })
