@@ -1,50 +1,647 @@
-*{
+:root
+{
+    --bord-col: #ffffff2b;
+    --butt-col: #39ff6682;
+    --back-col: #e3e3e314;
+    --shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px;
+    --ripple: calc(2 * (100vw - 50px));
+}
+body[data-theme=dark]
+{
+    --bord-col: #ffffff2b;
+    --back-col: #e3e3e314;
+    --shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px, rgba(0, 0, 0, 0.15) 0px 1px 2px;
+}
+body[data-theme=light]
+{
+    --bord-col: #ffffff45;
+    --back-col: #94949414;
+    --shadow: rgba(0, 0, 0, 0.06) 0px 1px 3px, rgba(0, 0, 0, 0.06) 0px 1px 2px;
+}
+*
+{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+input, textarea, button, select, a, article, div, section
+{
+    -webkit-tap-highlight-color: transparent;    /* non-standard CSS property */
+}
+#bg-image
+{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
 
-#uestion_space{
-    margin: 2rem;
-    padding: 1rem;
-    background: pink;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    z-index: -10;
 }
 
-#question_space h2{
+
+
+/* info-space */
+
+#info-space
+{
+    position: relative;
+    height: 95px;
+
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+}
+#info-space a
+{
+    display: inline-block;
+
+    position: relative;
+    height: 100%;
+    width: 90px;
+
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+#info-space svg
+{
+    position: absolute;
+    top: 25%;
+    left: 32%;
+}
+#info-space a span
+{
+    position: absolute;
+    top: 58%;
+    left: 25%;
+
+    display: inline-block;
+
+    font-weight: 600;
+}
+
+
+#topic
+{
+    position: absolute;
+    height: 100%;
+
+    display: inline-block;
+}
+#topic h1
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    padding-left: 17px;
+
+    border: solid;
+    border-width: 0px 0px 0px 3px;
+    border-color: white; 
+}
+
+#que-no
+{
+    position: absolute;
+    top: 102px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: inline-block;
+    
+    z-index: 10;
+}
+#que-no span
+{
+    position: relative;
+    display: inline-block;
+    padding: 0px 4px;
+}
+#que-no #total-que
+{
+    left: -3px;
+}
+#que-no #curr-que
+{
+    left: 3px;
+}
+
+#score
+{
+    position: absolute;
+    left: 10px;
+    top: 102px;
+
+    display: inline-block;
+    
+    z-index: 10;
+}
+#score span
+{
+    display: inline-block;
+
+    padding: 0px 4px;
+}
+#score #current
+{
+    position: relative;
+    left: -4px;
+}
+
+
+#time
+{
+    position: absolute;
+    right: 10px;
+    top: 102px;
+
+    display: inline-block;
+
     text-align: center;
-    background: gray;
-    padding: 2rem;
+
+    z-index: 10;
+}
+#time span
+{
+    display: inline-block;
+
+    width: 25px;
+    height: 25px;
+}
+#time :nth-child(2)
+{
+    width: 2px;
 }
 
-.infotab{
-    text-align: right;
-    padding: 2rem;
-    font-size: 1rem;
+
+
+/* question, options and skip */
+
+#question-space h2
+{
+    height: 130px;
+    padding: 54px 36px 10px;
+    
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    text-align: center;
+
+    background: var(--back-col);
+    backdrop-filter: blur(15px);
+
+    border: solid var(--bord-col);
+    border-width: 2px 0px;
+    box-shadow: rgba(0, 0, 0, 10%) 0px 1px 3px, rgba(0, 0, 0, 10%) 0px 1px 2px;
+
+    overflow: hidden;
 }
 
-.options{
+#options
+{
+    padding-top: 50px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.choice
+{
+    position: relative;
+
+    margin: 0px 25px 20px;
+    padding: 17px;
+    
+    font-size: 23px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+
+    background: var(--back-col);
+    backdrop-filter: blur(15px);
+    
+    border-radius: 11px;
+    border: solid var(--bord-col);
+    border-width: 1px 0px;
+
+    box-shadow: rgba(0, 0, 0, 10%) 0px 1px 3px, rgba(0, 0, 0, 10%) 0px 1px 2px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+}
+.choice[data-ans]
+{
+    transition: border 550ms ease-in-out;
+}
+.choice span
+{
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    background: var(--butt-col);
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    animation: animateRipple 550ms ease-in-out 1 forwards;
+
+    z-index: -10;
+}
+.choice div
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+    background-color: #22ff68a3;
+    
+    opacity: 0;
+    
+    animation: animateFade 550ms ease-in-out 1 forwards 150ms;
+
+    z-index: -10;
+}
+@keyframes animateRipple
+{
+    0%
+    {
+        width: 0;
+        height: 0;
+    }
+    100%
+    {
+        width: var(--ripple);
+        height: var(--ripple);
+    }
+}
+@keyframes animateFade
+{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+#skip
+{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+}
+#skip button
+{
+    all: unset;
+
+    position: absolute;
+    top: 7px;
+    height: 50px;
+    width: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--back-col);
+    backdrop-filter: blur(15px);
+
+    border-radius: 11px;
+    border: solid var(--bord-col);
+    border-width: 1px 0px;
+
+    box-shadow: rgba(0, 0, 0, 10%) 0px 1px 3px, rgba(0, 0, 0, 10%) 0px 1px 2px;
+
+    color: white;
+    font-size: 19px;
+    font-family: 'Quicksand', sans-serif;
+
+    cursor: pointer;
+}
+#skip svg
+{
+    position: relative;
+    left: -8px;
+}
+#skip button:active
+{
+    background-color: #ffffff1a;
+}
+
+
+
+/* Menu and Again */
+
+#menu-again
+{
+    /* If only this container is set as absolute, the buttons would still occupy height, but
+    Keeping it as relative is not causing any problems as the buttons are absolute */
+    position: relative;
+    
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    padding: 1rem;
-}
 
-button{
-    margin: 0.5rem;
-    padding: 1rem;
-    font-weight: 400;
-}
+    padding-top: 36px;
 
-.buttonCorrect{
-    background: green;
-}
-
-.buttonWrong{
-    background: red;
-}
-
-button:hover{
-    border: 0.1rem solid gold;
+    background: var(--back-col);
+    backdrop-filter: blur(15px);
     
+    border: solid var(--bord-col);
+    border-width: 2px 0px;
+
+    box-shadow: var(--shadow);
+    
+    visibility: hidden;
+
+    z-index: 5;
+}
+#menu-again button
+{
+    all: unset;
+    
+    /*absolute and not relative because the buttons were occupying space for height ~621px, will be overridden by js*/
+    position: absolute;
+    height: 60px;
+
+    font-size: 23px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    text-align: center;
+    
+    cursor: pointer;
+}
+#menu-again button:active
+{
+    background-color: #00000029;
+}
+#menu svg
+{
+    position: absolute;
+    top: 27%;
+    left: 30%;
+}
+#menu span
+{
+    position: absolute;
+    top: 25%;
+    left: calc(30% + 42px);
+}
+#again svg
+{
+    position: absolute;
+    top: 24%;
+    right: calc(32% + 73px);
+}
+#again span
+{
+    position: absolute;
+    top: 25%;
+    right: 32%;
 }
 
+
+
+
+/* Result */
+
+#result-space
+{
+    background: var(--back-col);
+    backdrop-filter: blur(15px); 
+
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    text-align: center;
+
+    overflow-y: scroll;
+}
+#result-space article
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin: 20px 0px;
+}
+#result-space div
+{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+#que-block
+{
+    margin: 7px;
+    padding: 15px;
+
+    grid-column: 1 / span 2;
+}
+#correct-block, #chosen-block
+{
+    padding: 12px;
+
+    border-radius: 6px;
+}
+#correct-block
+{
+    background-color: #22ff68a3;
+
+    grid-column: 1 / span 2;
+
+    margin-top: 0px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+}
+#chosen-block
+{
+    background-color: #ff0000a3;
+
+    margin-top: 0px;
+    margin-right: 6px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+}
+#result-space article[data-s=true] #chosen-block
+{
+    background-color: #ffcd20bd;
+}
+#result-space article[data-c=true] #correct-block
+{
+    grid-column: 2 / span 1;
+    
+    margin-top: 0px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-left: 6px;
+}
+
+
+
+
+
+@media screen and (min-width:800px)
+{
+    :root
+    {
+        --ripple: calc(2 * (50vw - 170px));
+    }
+    ::-webkit-scrollbar
+    {
+        background: #0000004d;
+        width: 5px;
+    }
+    ::-webkit-scrollbar-thumb
+    {
+        background: #ffffff40;
+    }
+    #bg-image
+    {
+        background-position: center center;
+    }
+    #options
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+    .choice
+    {
+        margin: 10px 85px 40px;
+        padding: 19px;
+    }
+    #result-space
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+@media screen and (max-height:760px) and (orientation:portrait)
+{
+    #info-space
+    {
+        height: 85px;
+    }
+    #que-no
+    {
+        top: 91px;
+    }
+    #score
+    {
+        top: 91px;
+    }
+    #time
+    {
+        top: 91px;
+    }
+    #question-space h2
+    {
+        height: 115px;
+        padding: 45px 36px 10px;
+    }
+    #options
+    {
+        padding-top: 25px;
+    }
+    .choice
+    {
+        margin: 0px 37px 20px;
+        padding: 14px;
+    }
+    #skip button
+    {
+        top: 0px;
+        height: 45px;
+        width: 110px;
+    }
+}
+
+
+
+
+/* 
+Best Button Animations
+----------------------
+
+https://webdeasy.de/en/top-css-buttons-en/
+
+#2 Rounded Button
+#3 Blubby Button  *
+#5 Blobs button
+#6 Thin Buttons (3)  *
+#15 Button Change
+#18 Swipe Right Button
+#19 Fancy Buttons
+#21 Collection of Button Hover Effects (5) *
+#26 Button Hover Effects (All)  **
+#27 Button bubble effect  *
+#32 Button hover effect with box-shadow
+#57 CSS Button Animation
+
+
+https://uifresh.net/css-button-style-animation-examples/
+
+14. Playful button hover effects
+21. Cryptaris Glitch Button
+35. Wave button hover animation
+*/
+
+
+
+/* 
+Tried Box-Shadows
+-----------------
+
+box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 4px;
+box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.075);
+box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.15) 0px 1px 2px;
+box-shadow: rgba(0, 0, 0, 10%) 0px 1px 3px, rgba(0, 0, 0, 10%) 0px 1px 2px; 
+box-shadow: rgba(0, 0, 0, 0.10) 0px 1px 3px, rgba(0, 0, 0, 0.10) 0px 1px 2px;
+*/
+
+
+
+/*
+Tried Border Shadows
+--------------------
+
+--bord-col: #ffffff38;
+--bord-col: #b7b7b738;
+--bord-col: #cdcdcd38;
+--bord-col: #93939338;
+--bord-col: #ffffff40;
+*/
+
+
+
+/* 
+Tried Shades of Green
+---------------------
+
+--butt-col: #22ff5470;
+--butt-col: #22ff9b70;
+--butt-col: #22ffb970;
+--butt-col: #57f57a7d;
+--butt-col: #39ff6669;
+--butt-col: #22ff6870;
+--butt-col: #22ff687d;
+--butt-col: #39ff6682;
+*/
