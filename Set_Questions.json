@@ -1,56 +1,80 @@
 [
     {
-        "title":"Maths",
-        "path":"QuestionSets/Maths.json",
-        "questions":"5",
-        "desc":"Extreamly curated high difficulty questions."
+        "title":"States & Capitals",
+        "path":"QuestionSets/states_capitals.json",
+        "questions":"36",
+        "desc":"28 indian states, 8 union territories and their capitals"
     },
     {
-        "title":"Credentials",
-        "path":"QuestionSets/Credentials.json",
-        "questions":"2",
-        "desc":"Very confidential data."
-    },
-    {
-        "title":"Genral Knowledge 1",
-        "path":"QuestionSets/GeneralKnowledge.json",
+        "title":"Dummy Set 1",
+        "path":"QuestionSets/DummySet.json",
         "questions":"3",
-        "desc":"Basic facts."
+        "desc":"Dummy Questions"
     },
     {
-        "title":"Genral Knowledge 2",
-        "path":"QuestionSets/GeneralKnowledge.json",
+        "title":"Dummy Set 2",
+        "path":"QuestionSets/DummySet.json",
         "questions":"3",
-        "desc":"Basic facts."
+        "desc":"Dummy Questions"
     },
     {
-        "title":"Genral Knowledge 3",
-        "path":"QuestionSets/GeneralKnowledge.json",
+        "title":"Dummy Set 3",
+        "path":"QuestionSets/DummySet.json",
         "questions":"3",
-        "desc":"Basic facts."
+        "desc":"Dummy Questions"
     },
     {
-        "title":"Genral Knowledge 4",
-        "path":"QuestionSets/GeneralKnowledge.json",
+        "title":"Dummy Set 4",
+        "path":"QuestionSets/DummySet.json",
         "questions":"3",
-        "desc":"Basic facts."
+        "desc":"Dummy Questions"
     },
     {
-        "title":"Genral Knowledge 5",
-        "path":"QuestionSets/GeneralKnowledge.json",
+        "title":"Dummy Set 5",
+        "path":"QuestionSets/DummySet.json",
         "questions":"3",
-        "desc":"Basic facts."
+        "desc":"Dummy Questions"
     },
     {
-        "title":"Genral Knowledge 6",
-        "path":"QuestionSets/GeneralKnowledge.json",
+        "title":"Dummy Set 6",
+        "path":"QuestionSets/DummySet.json",
         "questions":"3",
-        "desc":"Basic facts."
+        "desc":"Dummy Questions"
     },
     {
-        "title":"Genral Knowledge 7",
-        "path":"QuestionSets/GeneralKnowledge.json",
+        "title":"Dummy Set 7",
+        "path":"QuestionSets/DummySet.json",
         "questions":"3",
-        "desc":"Basic facts."
+        "desc":"Dummy Questions"
+    },
+    {
+        "title":"Dummy Set 8",
+        "path":"QuestionSets/DummySet.json",
+        "questions":"3",
+        "desc":"Dummy Questions"
+    },
+    {
+        "title":"Dummy Set 9",
+        "path":"QuestionSets/DummySet.json",
+        "questions":"3",
+        "desc":"Dummy Questions"
+    },
+    {
+        "title":"Dummy Set 10",
+        "path":"QuestionSets/DummySet.json",
+        "questions":"3",
+        "desc":"Dummy Questions"
+    },
+    {
+        "title":"Dummy Set 11",
+        "path":"QuestionSets/DummySet.json",
+        "questions":"3",
+        "desc":"Dummy Questions"
+    },
+    {
+        "title":"Dummy Set 12",
+        "path":"QuestionSets/DummySet.json",
+        "questions":"3",
+        "desc":"Dummy Questions"
     }
 ]
