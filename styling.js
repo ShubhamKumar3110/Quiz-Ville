@@ -94,10 +94,14 @@ document.getElementById("head-set").addEventListener("scroll", () => {
     if(setTop > 170)
     {
         logo.classList.remove("at-top");
+        document.querySelector("#profile button").classList.remove("at-top-profile");
+        document.getElementById("profile-name").style.display = "block";
         document.querySelector(".heading-item").style.fontSize = "75px";
     } else
     {
         logo.classList.add("at-top");
+        document.querySelector("#profile button").classList.add("at-top-profile");
+        document.getElementById("profile-name").style.display = "none";
         document.querySelector(".heading-item").style.fontSize = "30px";
     }
 });
