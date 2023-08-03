@@ -66,18 +66,19 @@ input, textarea, button, select, a, article, div, section
 .hamburger-menu
 {
     position: absolute;
-    height: 7vh;
+    height: 68px;
+    width: 75px;
 
-    border-style: solid;
-    border-color: #ffffffb5;
-    border-width: 0px 0px 1px 0px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     z-index: 15;
 }
 #hamburger-toggle
 {
     position: absolute;
-    height: 7vh;
+    height: 68px;
     width: 75px;
 
     border: none;
@@ -91,8 +92,6 @@ input, textarea, button, select, a, article, div, section
 .hamburger-lines 
 {
     position: absolute;
-    top: calc(3vh - 2px);
-    left: 3vh;
     height: 23px;
     width: 33px;
 
@@ -184,6 +183,59 @@ input, textarea, button, select, a, article, div, section
 
 
 
+/* Profile */
+#profile
+{
+    position: absolute;
+    right: 0;
+    height: 68px;
+
+    display: flex;
+    
+    padding: 11px;
+    
+    z-index: 8;
+}
+#profile button
+{
+    all: unset;
+
+    color: white;
+    font-size: 21px;
+    font-family: 'Quicksand', sans-serif;
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--bgcolor);
+    backdrop-filter: blur(15px);
+    
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 1px 4px;
+
+    cursor: pointer;
+}
+#profile-photo
+{
+}
+#profile-name
+{
+    display: block;
+    margin-right: 5px;
+}
+#profile .at-top-profile
+{
+    background: transparent;
+    backdrop-filter: blur(0px);
+    box-shadow: none;
+}
+
+
+
 /* Links */
 #links
 {
@@ -192,7 +244,8 @@ input, textarea, button, select, a, article, div, section
 #links-heading
 {
     position: absolute;
-    height: calc(var(--viewh, 1vh) * 9);
+    /* height: calc(var(--viewh, 1vh) * 9); */
+    height: 70px;
     width: 100%;
     
     background: var(--navcolor);
@@ -221,8 +274,10 @@ input, textarea, button, select, a, article, div, section
 #links-item
 {
     position: absolute;
-    top: calc(var(--viewh, 1vh) * 9);
-    height: calc(var(--viewh, 1vh) * 91);
+    /* top: calc(var(--viewh, 1vh) * 9); */
+    top: 70px;
+    /* height: calc(var(--viewh, 1vh) * 91); */
+    height: calc((var(--viewh, 1vh) * 100) - 70px);
     width: 100%;
 
     background: var(--navcolor);
@@ -294,7 +349,8 @@ input, textarea, button, select, a, article, div, section
 #themes-heading
 {
     position: absolute;
-    height: calc(var(--viewh, 1vh) * 9);
+    /* height: calc(var(--viewh, 1vh) * 9); */
+    height: 70px;
     width: 100%;
 
     background: var(--navcolor);
@@ -323,8 +379,10 @@ input, textarea, button, select, a, article, div, section
 #themes-item
 {
     position: absolute;
-    top: calc(var(--viewh, 1vh) * 9);
-    height: calc(var(--viewh, 1vh) * 91);
+    /* top: calc(var(--viewh, 1vh) * 9); */
+    top: 70px;
+    /* height: calc(var(--viewh, 1vh) * 91); */
+    height: calc((var(--viewh, 1vh) * 100) - 70px);
     width: 100%;
 
     background: var(--navcolor);
@@ -560,6 +618,7 @@ input, textarea, button, select, a, article, div, section
     {
         background-position: center center;
     }
+
     #hamburger-toggle 
     {
         height: 9vh;
@@ -571,6 +630,7 @@ input, textarea, button, select, a, article, div, section
     }
     #links-heading
     {
+        height: 67px;
         width: 410px;
 
         border-right-width: 2px;
@@ -578,6 +638,8 @@ input, textarea, button, select, a, article, div, section
     #links-item
     {
         width: 410px;
+        top: 67px;
+        height: calc(100vh - 67px);
 
         border-style: solid;
         border-color: #ffffffb5;
@@ -585,6 +647,7 @@ input, textarea, button, select, a, article, div, section
     }
     #themes-heading
     {
+        height: 67px;
         width: 410px;
 
         border-right-width: 2px;
@@ -592,6 +655,8 @@ input, textarea, button, select, a, article, div, section
     #themes-item
     {
         width: 410px;
+        top: 67px;
+        height: calc(100vh - 67px);
 
         border-style: solid;
         border-color: #ffffffb5;
@@ -604,7 +669,7 @@ input, textarea, button, select, a, article, div, section
     }
     .at-top
     {
-        height: calc(var(--viewh, 1vh) * 9 + 1px);
+        height: 68px;
     }
     #sets
     {
